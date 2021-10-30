@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class SceneManager
+public static class GameManager
 {
     public static void ReloadScene()
     {

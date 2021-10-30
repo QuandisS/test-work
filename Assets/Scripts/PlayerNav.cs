@@ -10,6 +10,7 @@ public class PlayerNav : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private static readonly int IsStopped = Animator.StringToHash("isStopped");
+    private bool _isNavigationEverStarted = false;
 
     private void Awake()
     {
@@ -27,9 +28,10 @@ public class PlayerNav : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_isNavigationEverStarted)
         {
             MoveToNextWaypoint();
+            _isNavigationEverStarted = true;
         }
 
         _animator.SetBool(IsStopped, _navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance);
@@ -37,7 +39,7 @@ public class PlayerNav : MonoBehaviour
 
     private void MoveToNextWaypoint()
     {
-        if (_waypointsQueue.Count == 0) SceneManager.ReloadScene();
+        if (_waypointsQueue.Count == 0) GameManager.ReloadScene();
         else
         {
             _navMeshAgent.destination = _waypointsQueue.Dequeue().position;
