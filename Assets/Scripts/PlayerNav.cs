@@ -32,19 +32,12 @@ public class PlayerNav : MonoBehaviour
             MoveToNextWaypoint();
         }
 
-        if (_navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance)
-        {
-            print("less");
-            _animator.SetBool(IsStopped, true);
-        }
-        else
-        {
-            _animator.SetBool(IsStopped, false);
-        }
+        _animator.SetBool(IsStopped, _navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance);
     }
 
     private void MoveToNextWaypoint()
     {
+        if (_waypointsQueue.Count == 0) SceneManager.ReloadScene();
         _navMeshAgent.destination = _waypointsQueue.Dequeue().position;
     }
     
