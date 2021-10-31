@@ -46,10 +46,6 @@ public class PlayerNav : MonoBehaviour
 
     private void MoveToNextWaypoint()
     {
-        if (_waypointsQueue.Count == 0) GameManager.ReloadScene();
-        else
-        {
-            _navMeshAgent.destination = _waypointsQueue.Dequeue().position;
-        }
+        _navMeshAgent.destination = _waypointsQueue.Dequeue().position;
     }
 }

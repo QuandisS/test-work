@@ -12,14 +12,16 @@ public class Pack : MonoBehaviour
         var isAllDead = true;
         foreach (var enemy in enemies)
         {
-            if (!enemy.isDead) isAllDead = false;
-            break;
+            if (!enemy.isDead)
+            {
+                isAllDead = false;
+                break;
+            }
         }
 
         if (isAllDead && !_isEventAlreadySent)
         {
             _isEventAlreadySent = true;
-            print("Dead");
             PackCleared();
         }
     }
