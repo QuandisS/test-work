@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private HealthBar healthBar;
+    
     private int _hp = 100;
     private Collider _mainCollider;
     private Collider[] _allColliders;
@@ -12,6 +14,7 @@ public class Enemy : MonoBehaviour
         _mainCollider = GetComponent<Collider>();
         _allColliders = GetComponentsInChildren<Collider>(true);
         Ragdoll(false);
+        healthBar.SetHealth(_hp);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -19,11 +22,13 @@ public class Enemy : MonoBehaviour
         if (!other.transform.CompareTag("Bullet")) return;
         
         _hp -= 50;
+        healthBar.SetHealth(_hp);
         
         if (_hp > 0) return;
         
         Ragdoll(true);
         isDead = true;
+        Destroy(healthBar.gameObject);
     }
 
     private void Ragdoll(bool isRagdoll)
