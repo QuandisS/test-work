@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float raycastLength;
-    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletStartTransform;
     [SerializeField] private float bulletSpeed;
     
-    private bool _isFirstClicked = false;
+    private bool _isFirstClicked;
     private Camera _mainCamera;
     private Vector3 _bulletStartPos;
 
@@ -28,7 +25,7 @@ public class Player : MonoBehaviour
             if (!Physics.Raycast(ray, out var hit, raycastLength)) return;
             
             _bulletStartPos = bulletStartTransform.position;
-            var bullet = Instantiate(bulletPrefab, _bulletStartPos, Quaternion.identity);
+            var bullet = BulletPooler.Instance.SpawnFromPool(_bulletStartPos, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce((hit.point - _bulletStartPos).normalized * bulletSpeed);
         }
     }

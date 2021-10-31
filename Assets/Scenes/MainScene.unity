@@ -3749,7 +3749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 4, y: 4, z: 1}
-  ShoulderOffset: {x: 2.82, y: 1.72, z: -0.61}
+  ShoulderOffset: {x: 2.86, y: 1.72, z: -0.61}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2.64
@@ -3952,8 +3952,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.009504579, y: -0.85908717, z: -0.015963612, w: 0.51149213}
-  m_LocalPosition: {x: 0.6979078, y: 5.059, z: -3.8799078}
+  m_LocalRotation: {x: -0.010062364, y: -0.8608467, z: -0.0170354, w: 0.5084796}
+  m_LocalPosition: {x: 0.6979077, y: 5.059, z: -3.839908}
   m_LocalScale: {x: 10.220136, y: 10.220136, z: 10.220136}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4168,6 +4168,51 @@ CapsuleCollider:
   m_Height: 0.45969057
   m_Direction: 1
   m_Center: {x: 0, y: 0.22984529, z: 0}
+--- !u!1 &995739925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995739927}
+  - component: {fileID: 995739926}
+  m_Layer: 0
+  m_Name: BulletPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &995739926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995739925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1eef2672470f0409a2374a89a7245b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPoolSize: 10
+  bulletPrefab: {fileID: 9106284045146416325, guid: 9ac163a0703fd884ba6f205f7ea7963f, type: 3}
+--- !u!4 &995739927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995739925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.365135, y: 0.39794296, z: -31.73526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1010791712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6809,8 +6854,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141880568}
-  m_LocalRotation: {x: -0.009504579, y: -0.85908717, z: -0.015963612, w: 0.51149213}
-  m_LocalPosition: {x: 0.6979078, y: 5.059, z: -3.8799078}
+  m_LocalRotation: {x: -0.010062364, y: -0.8608467, z: -0.0170354, w: 0.5084796}
+  m_LocalPosition: {x: 0.6979077, y: 5.059, z: -3.839908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 907928556}

@@ -9,8 +9,9 @@ public class Bullet : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter()
     {
-        Destroy(gameObject);
+        _rigidbody.velocity = Vector3.zero;
+        gameObject.SetActive(false);
     }
 }
