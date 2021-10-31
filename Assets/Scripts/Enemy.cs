@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     private int _hp = 100;
     private Collider _mainCollider;
     private Collider[] _allColliders;
+    public bool isDead;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
         if (_hp > 0) return;
         
         Ragdoll(true);
+        isDead = true;
     }
 
     private void Ragdoll(bool isRagdoll)
